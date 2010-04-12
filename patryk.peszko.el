@@ -16,3 +16,26 @@
 (setq cursor-type "hollow")
 (setq default-cursor-in-non-selected-windows nil)
 (blink-cursor-mode 0.5)
+
+;;eshell banner
+(setq eshell-banner-message "Welcome Patryk on the Emacs shell\n\n")
+;; clearing eshell
+(defun eshell/clear ()
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
+
+;;shell color and read only prompt
+(setq ansi-color-names-vector ; better contrast colors
+      ["black" "red4" "green4" "yellow4"
+       "blue3" "magenta4" "cyan4" "white"])
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(add-hook 'shell-mode-hook '(lambda () (toggle-truncate-lines 1)))
+(setq comint-prompt-read-only t)
+
+;; Setup Emacs to run bash as its primary shell.
+(setq shell-file-name "bash")
+(setq shell-command-switch "-c")
+(setq explicit-shell-file-name shell-file-name)
+(setenv "SHELL" shell-file-name)
+(setq explicit-sh-args '("-login" "-i"))
