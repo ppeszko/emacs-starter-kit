@@ -3,9 +3,10 @@
 
 (global-set-key (kbd "A-/") 'comment-or-uncomment-region-or-line)
 
-(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
-(require 'textmate)
-(textmate-mode)
+;;textmate-mode
+;;(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+;;(require 'textmate)
+;;(textmate-mode)
 
 (add-to-list 'load-path
                   "~/.emacs.d/vendor/yasnippet.el")
@@ -39,3 +40,25 @@
 (setq explicit-shell-file-name shell-file-name)
 (setenv "SHELL" shell-file-name)
 (setq explicit-sh-args '("-login" "-i"))
+
+;; Rinari
+;;(add-to-list 'load-path "~/.emacs.d/vendor/rinari/rinari.el")
+;;(require 'rinari)
+
+;;(require 'color-theme)
+
+;;OpenPeepcode
+(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+(require 'textmate)
+(textmate-mode)
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+(require 'peepopen)
+
+;; Color Themes
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
+(require 'color-theme)
+(color-theme-initialize)
+
+;; ;; Activate theme
+;; (load (concat dotfiles-dir "topfunky/theme.el"))
+;; (color-theme-subtle-hacker

@@ -11,3 +11,5 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+ '(html-mode-default ((t (:inherit sgml-mode-default :slant normal :weight normal :height 140 :family "anonymous pro"))) t)
+ '(ruby-mode-default ((t (:inherit autoface-default :slant normal :weight normal :height 140 :family "anonymous pro"))) t))
