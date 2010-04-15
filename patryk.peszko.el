@@ -55,9 +55,9 @@
 ;; (require 'peepopen)
 
 ;; Color Themes
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
-(require 'color-theme)
-(color-theme-initialize)
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
+;; (require 'color-theme)
+;; (color-theme-initialize)
 
 ;; ;; Activate theme
 ;; (load (concat dotfiles-dir "topfunky/theme.el"))
