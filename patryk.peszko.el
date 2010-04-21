@@ -3,11 +3,6 @@
 
 (global-set-key (kbd "A-/") 'comment-or-uncomment-region-or-line)
 
-;;textmate-mode
-(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
-(require 'textmate)
-(textmate-mode)
-
 (add-to-list 'load-path
                   "~/.emacs.d/vendor/yasnippet.el")
 (require 'yasnippet) ;; not yasnippet-bundle
@@ -42,17 +37,17 @@
 (setq explicit-sh-args '("-login" "-i"))
 
 ;; Rinari
-;;(add-to-list 'load-path "~/.emacs.d/vendor/rinari/rinari.el")
-;;(require 'rinari)
+;; (add-to-list 'load-path "~/.emacs.d/vendor/rinari")
+;; (require 'rinari)
 
 ;;(require 'color-theme)
 
 ;;OpenPeepcode
-;; (add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
-;; (require 'textmate)
-;; (textmate-mode)
-;; (add-to-list 'load-path "~/.emacs.d/vendor/")
-;; (require 'peepopen)
+(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+(require 'textmate)
+(textmate-mode)
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+(require 'peepopen)
 
 ;; Color Themes
 ;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
@@ -65,30 +60,35 @@
 
 
 ;; flymake for ruby
-(require 'flymake)
+;; (require 'flymake)
 
-;; I don't like the default colors :)
-(set-face-background 'flymake-errline "red4")
-(set-face-background 'flymake-warnline "dark slate blue")
+;; ;; I don't like the default colors :)
+;; (set-face-background 'flymake-errline "red4")
+;; (set-face-background 'flymake-warnline "dark slate blue")
 
-;; Invoke ruby with '-c' to get syntax checking
-(defun flymake-ruby-init ()
-  (let* ((temp-file   (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-	 (local-file  (file-relative-name
-                       temp-file
-                       (file-name-directory buffer-file-name))))
-    (list "ruby" (list "-c" local-file))))
+;; ;; Invoke ruby with '-c' to get syntax checking
+;; (defun flymake-ruby-init ()
+;;   (let* ((temp-file   (flymake-init-create-temp-buffer-copy
+;;                        'flymake-create-temp-inplace))
+;; 	 (local-file  (file-relative-name
+;;                        temp-file
+;;                        (file-name-directory buffer-file-name))))
+;;     (list "ruby" (list "-c" local-file))))
 
-(push '(".+\\.rb$" flymake-ruby-init) flymake-allowed-file-name-masks)
-(push '("Rakefile$" flymake-ruby-init) flymake-allowed-file-name-masks)
+;; (push '(".+\\.rb$" flymake-ruby-init) flymake-allowed-file-name-masks)
+;; (push '("Rakefile$" flymake-ruby-init) flymake-allowed-file-name-masks)
 
-(push '("^\\(.*\\):\\([0-9]+\\): \\(.*\\)$" 1 2 nil 3) flymake-err-line-patterns)
+;; (push '("^\\(.*\\):\\([0-9]+\\): \\(.*\\)$" 1 2 nil 3) flymake-err-line-patterns)
 
-(add-hook 'ruby-mode-hook
-          '(lambda ()
+;; (add-hook 'ruby-mode-hook
+;;           '(lambda ()
 
-	     ;; Don't want flymake mode for ruby regions in rhtml files and also on read only files
-	     (if (and (not (null buffer-file-name)) (file-writable-p buffer-file-name))
-		 (flymake-mode))
-	     ))
+;; 	     ;; Don't want flymake mode for ruby regions in rhtml files and also on read only files
+;; 	     (If (and (not (null buffer-file-name)) (file-writable-p buffer-file-name))
+;; 		 (flymake-mode))
+;; 	     ))
+
+;;textmate-mode
+;; (add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+;; (require 'textmate)
+;; (textmate-mode)

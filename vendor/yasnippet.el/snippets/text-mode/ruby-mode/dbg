@@ -1,0 +1,4 @@
+#name : ruby debugger 
+#group : debugging
+# --
+require "ruby-debug"; Debugger.start; debugger
